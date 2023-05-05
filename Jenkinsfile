@@ -23,7 +23,7 @@ pipeline {
            steps {
                script {         
                  def customImage = docker.build('azuretushar2022/petclinic', "./docker")
-                 docker.withRegistry('https://registry.hub.docker.com', 'acr_demo') {
+                 docker.withRegistry('https://acrregistryabc.azurecr.io', 'acr_demo') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
            }
